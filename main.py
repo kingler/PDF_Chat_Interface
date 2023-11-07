@@ -21,7 +21,7 @@ pip install -r requirements.txt --upgrade'''
 
 # define your openai api key in your environment variables as "OPENAI_API_KEY"
 # or define it here
-openai.api_key = "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"
+openai.api_key = "OPENAI_API_KEY"
 
 # Create a Console instance for custom styling
 console = Console()
@@ -31,15 +31,15 @@ class Chat_With_PDFs_and_Summarize:
     # Initialize the class with model information
     def __init__(self, model_name="gpt-3.5-turbo", temperature=0):
         # Initialize ChatOpenAI for summarization and chat
-        self.llm_summarize = ChatOpenAI(model_name=model_name, temperature=temperature, openai_api_key="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")
-        self.llm_chat = ChatOpenAI(model_name=model_name, temperature=temperature, openai_api_key="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")
+        self.llm_summarize = ChatOpenAI(model_name=model_name, temperature=temperature, openai_api_key="OPENAI_API_KEY")
+        self.llm_chat = ChatOpenAI(model_name=model_name, temperature=temperature, openai_api_key="OPENAI_API_KEY")
         
         # Initialize variables to store document, pages and index information
         self.loader = None
         self.pages = None
         self.docs = None
         self.db_index = None
-        self.embeddings = OpenAIEmbeddings(openai_api_key="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")
+        self.embeddings = OpenAIEmbeddings(openai_api_key="OPENAI_API_KEY")
         self.persist_directory = "db_index"
         self.doc_hash = None
 
